@@ -2,6 +2,7 @@ const timer = () => {
     const dateNow = new Date();
     const options = { weekday: 'long' };
     const dayOfWeek = dateNow.toLocaleString('ru-ru', options);
+    let nowTime = dateNow.toLocaleTimeString('ru-ru');
     let dataStop =  new Date('1 January 2024');
     let timeRemaining = (dataStop - dateNow) / 1000;
     let days = Math.floor(timeRemaining / 60 / 60 / 24);
@@ -19,7 +20,8 @@ const timer = () => {
       }
       setTime(dateNow.getHours());
     
-    console.log('Сегодня: ' + dayOfWeek);    
+    console.log('Сегодня: ' + dayOfWeek);
+    console.log('Текущее время: ' + nowTime);    
     console.log('До Нового Года осталось: ' + days);          
 
 };
